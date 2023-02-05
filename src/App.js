@@ -10,13 +10,23 @@ const Banner = (props) => {
 
 const Button = (props) => {
   return (
-    <button onClick={props.handleClick}>{props.label}</button>
+    <button 
+      className="button"
+      onClick={props.handleClick}
+      >
+        {props.label}
+      </button>
   )
 }
 
 const Result = (props) => {
   return (
-    <p>{props.text}: {props.count}</p>
+    <p
+      className="resultItem"
+      id={props.id}
+      >
+        {props.text}: {props.count}
+    </p>
   )
 }
 
@@ -44,37 +54,46 @@ const App = () => {
   }
 
   return (
-    <section>
-      <Banner text="How's my code?"/>
-      
-      <Button 
-        label="It Rocks!"
-        handleClick={() => rocksClick(rocksCount)} 
-        />
-      <Button 
-        label="I can live with it."
-        handleClick={() => liveClick(liveCount)} 
-        />
-      <Button 
-        label="It Sucks."
-        handleClick={() => sucksClick(sucksCount)} 
-        />
-      
-      <Banner text="Each line's quality:"/>
-      
-      <Result 
-        text="It Rocks"
-        count= {rocksCount} 
-        />
-      <Result 
-        text="I can live with it"
-        count= {liveCount}
-        />
-      <Result 
-        text="It Sucks"
-        count= {sucksCount}
-        />
-    </section>
+    <div className="main">
+      <section className="container">
+        <Banner text="How's my code?"/>
+
+        <section className="buttonContainer">
+          <Button 
+            label="It Rocks!"
+            handleClick={() => rocksClick(rocksCount)} 
+            />
+          <Button 
+            label="I can live with it."
+            handleClick={() => liveClick(liveCount)} 
+            />
+          <Button 
+            label="It Sucks."
+            handleClick={() => sucksClick(sucksCount)} 
+            />
+        </section>
+      </section>
+
+      <section className="container">
+        <Banner text="Each line's quality:"/>
+
+        <section className="resultsContainer">
+          <Result 
+            text="It Rocks"
+            count= {rocksCount} 
+            />
+          <Result 
+            id="liveItem"
+            text="I can live with it"
+            count= {liveCount}
+            />
+          <Result 
+            text="It Sucks"
+            count= {sucksCount}
+            />
+        </section>
+      </section>
+    </div>
   );
 }
 

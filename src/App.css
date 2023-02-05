@@ -1,4 +1,78 @@
-.App {
-  text-align: center;
+body {
+  background-color: aqua;
 }
 
+.main {
+  display: flex;
+  margin: 5% 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.container {
+  text-align: center;
+  background-color: blueviolet;
+  width: 40%;
+  padding: 2%;
+  margin: 2% auto;
+  font-size: 1.5em;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+
+.buttonContainer {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+ 
+  
+}
+
+.button {
+  padding: 10% 21%;
+  margin: 5% auto;
+  width: 100%;
+  border: darkblue;
+  border-radius: 3%;
+  font-size: 1.05em;
+  font-weight: bold;
+  color: antiquewhite;
+  background-color: darkblue;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:active{
+  background-color: antiquewhite;
+  color: darkblue;
+
+}
+
+
+.resultsContainer {
+  width: 80%;
+  height: 78%;
+  margin: 2% auto;
+  padding: 2% 0;
+  text-align: left;
+}
+
+.resultItem {
+  height: 10%;
+  background-color: salmon;
+  padding: 8% 14%;
+  font-weight: bold;
+  margin: 3% 0 15% 0;
+  color: lightyellow;
+}
+
+#liveItem{
+  padding: 8% 13%;
+}
