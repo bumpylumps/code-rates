@@ -8,6 +8,13 @@ const Banner = (props) => {
  )
 }
 
+const Button = (props) => {
+  return (
+    <button>{props.label}</button>
+  )
+}
+
+
 const App = () => {
   
   const [rocks, setRocks] = useState(0)
@@ -17,7 +24,10 @@ const App = () => {
   return (
     <div >
       <Banner text="How's my code?"/>
-      <Banner text="Each line is:"/>
+      <Button label="It Rocks!" />
+      <Button label="I can live with it." />
+      <Button label="It Sucks." />
+      <Banner text="Each line's quality:"/>
     </div>
   );
 }
