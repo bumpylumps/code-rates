@@ -10,7 +10,7 @@ const Banner = (props) => {
 
 const Button = (props) => {
   return (
-    <button>{props.label}</button>
+    <button onClick={props.handleClick}>{props.label}</button>
   )
 }
 
@@ -23,30 +23,58 @@ const Result = (props) => {
 
 const App = () => {
   
-  const [rocks, setRocks] = useState(0)
-  const [live, setLive] = useState(0)
-  const [sucks, setSucks] = useState(0)
+  const [rocksCount, setRocksCount] = useState(0)
+  const [liveCount, setLiveCount] = useState(0)
+  const [sucksCount, setSucksCount] = useState(0)
+
+  
+  function rocksClick(rocksCount){
+    rocksCount++
+    setRocksCount(rocksCount)
+  }
+
+  function liveClick(liveCount){
+    liveCount++
+    setLiveCount(liveCount)
+  }
+
+  function sucksClick(sucksCount){
+    sucksCount++
+    setSucksCount(sucksCount)
+  }
 
   return (
-    <div >
+    <section>
       <Banner text="How's my code?"/>
-      <Button label="It Rocks!" />
-      <Button label="I can live with it." />
-      <Button label="It Sucks." />
+      
+      <Button 
+        label="It Rocks!"
+        handleClick={() => rocksClick(rocksCount)} 
+        />
+      <Button 
+        label="I can live with it."
+        handleClick={() => liveClick(liveCount)} 
+        />
+      <Button 
+        label="It Sucks."
+        handleClick={() => sucksClick(sucksCount)} 
+        />
+      
       <Banner text="Each line's quality:"/>
+      
       <Result 
-        text="It Rocks:"
-        count= "0" 
+        text="It Rocks"
+        count= {rocksCount} 
         />
       <Result 
-        text="I can live with it:"
-        count= "0"
+        text="I can live with it"
+        count= {liveCount}
         />
       <Result 
-        text="It Sucks:"
-        count="0"
+        text="It Sucks"
+        count= {sucksCount}
         />
-    </div>
+    </section>
   );
 }
 
